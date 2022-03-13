@@ -2,8 +2,10 @@ package com.agencia.restagencia.database;
 
 import com.agencia.restagencia.entity.Packages;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RepositoryPackages extends JpaRepository<Packages, Long> {
+@Repository
+public interface RepositoryPackages extends MongoRepository<Packages, String> {
 
 }

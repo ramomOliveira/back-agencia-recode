@@ -1,25 +1,20 @@
 package com.agencia.restagencia.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class Client {
 
     @Id
     private String cpf;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     private String gender;
 
-    @Column(nullable = false)
     private String tel;
 
-    @Column(nullable = false)
     private String email;
 
     private String urlAvatar;

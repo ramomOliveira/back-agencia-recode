@@ -1,38 +1,32 @@
 package com.agencia.restagencia.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class Destinations {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
-    @Column(nullable = false)
+    private String id;
+
     private String place;
 
-    @Column(nullable = false)
     private String unitaryValue;
 
-    @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
     private String daysHosted;
 
-    @Column(nullable = false)
     private String includedPackage;
 
-    public long getId() {
+    private String urlImg;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -74,6 +68,14 @@ public class Destinations {
 
     public void setIncludedPackage(String includedPackage) {
         this.includedPackage = includedPackage;
+    }
+
+    public String getUrlImg() {
+        return urlImg;
+    }
+
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
     }
 
 }

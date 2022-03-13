@@ -6,6 +6,7 @@ import com.agencia.restagencia.database.RepositoryPackages;
 import com.agencia.restagencia.entity.Packages;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/packages")
 public class PackagesREST {
     @Autowired
@@ -32,8 +34,8 @@ public class PackagesREST {
 
     @PutMapping
     public void toAlter(@RequestBody Packages packages) {
-        if (packages.getId() > 0)
-            repositoryPackages.save(packages);
+
+        repositoryPackages.save(packages);
     }
 
     @DeleteMapping

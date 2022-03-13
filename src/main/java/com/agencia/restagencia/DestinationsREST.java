@@ -6,6 +6,7 @@ import com.agencia.restagencia.database.RepositoryDestinations;
 import com.agencia.restagencia.entity.Destinations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/destinations")
 public class DestinationsREST {
     @Autowired
@@ -32,8 +34,8 @@ public class DestinationsREST {
 
     @PutMapping
     public void toAlter(@RequestBody Destinations destinations) {
-        if (destinations.getId() > 0)
-            repositoryDestinations.save(destinations);
+
+        repositoryDestinations.save(destinations);
     }
 
     @DeleteMapping

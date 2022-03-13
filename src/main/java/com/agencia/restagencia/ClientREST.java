@@ -6,6 +6,7 @@ import com.agencia.restagencia.database.RepositoryClient;
 import com.agencia.restagencia.entity.Client;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/client")
 public class ClientREST {
     @Autowired
@@ -32,8 +34,8 @@ public class ClientREST {
 
     @PutMapping
     public void toAlter(@RequestBody Client client) {
-        if (client.getCpf() != "")
-            repositoryClient.save(client);
+
+        repositoryClient.save(client);
     }
 
     @DeleteMapping
