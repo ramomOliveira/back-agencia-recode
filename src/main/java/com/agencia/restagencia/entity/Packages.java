@@ -17,6 +17,21 @@ public class Packages {
     private String name;
 
     @Column(nullable = false)
+    private String includedPackage;
+
+    @Column(nullable = false)
+    private String description;
+
+    @Column(nullable = false)
+    private String daysHosted;
+
+    @Column(nullable = false)
+    private String hotelStars;
+
+    @Column(nullable = false)
+    private String amountPeople;
+
+    @Column(nullable = false)
     private String price;
 
     public Long getId() {
@@ -51,5 +66,36 @@ public class Packages {
         this.description = description;
     }
 
-    private String description;
+    public String getIncludedPackage() {
+        return includedPackage;
+    }
+
+    public void setIncludedPackage(String includedPackage) {
+        this.includedPackage = includedPackage;
+    }
+
+    public String getDaysHosted() {
+        return daysHosted;
+    }
+
+    public void setDaysHosted(String daysHosted) {
+        this.daysHosted = daysHosted;
+    }
+
+    public String getHotelStars() {
+        return hotelStars;
+    }
+
+    public void setHotelStars(String hotelStars) {
+        this.hotelStars = hotelStars;
+    }
+
+    public String getAmountPeople() {
+        return amountPeople;
+    }
+
+    public void setAmountPeople(String amountPeople) {
+        this.amountPeople = amountPeople;
+    }
+
 }
