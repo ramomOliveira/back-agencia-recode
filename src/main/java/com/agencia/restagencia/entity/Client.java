@@ -7,6 +7,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Client {
 
     @Id
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String cpf;
 
     private String name;
