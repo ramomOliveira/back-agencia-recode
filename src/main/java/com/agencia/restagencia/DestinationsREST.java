@@ -40,7 +40,7 @@ public class DestinationsREST {
     }
 
     @PutMapping("{id}")
-    public void changeDestination(@RequestBody Destinations destinations, @PathVariable String id) {
+    public void changeEvent(@RequestBody Destinations destinations, @PathVariable String id) {
         destinations.setId(id);
         repositoryDestinations.save(destinations);
     }
